@@ -7,8 +7,11 @@ tags:
 [Hexo](https://hexo.io/)是一个静态博客框架，能够允许用户将 Markdown 转化为html，生成静态网页，其支持gitbub page作为服务器进行部署。
 
 # 环境部署
-## 1 安装git 
-## 2 安装nodejs
+##  安装git 
+##  安装nodejs 
+''' shell
+    https://nodejs.org/zh-tw/download/
+'''
 
 
 # 主题安装

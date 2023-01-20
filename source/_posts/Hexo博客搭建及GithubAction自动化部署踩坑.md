@@ -9,8 +9,9 @@ tags:
 # 环境部署
 ##  安装git 
 ##  安装nodejs 
-''' shell
-    https://nodejs.org/zh-tw/download/
+''' python
+    https://nodejs.org/zh-tw/download/ # node js 下载地址
+    
 '''
 
 

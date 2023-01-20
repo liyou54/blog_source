@@ -45,7 +45,7 @@ hexo d
 
 hexo 的配置存放在 [/_config.yml]{.kbd .red} 以及 [/themes/主题名称/_config.yml]{.kbd .red} [\(/_config.主题名称/.yml\)]{.kbd .red}中，
 这里主要修改deploy值，让我们在运行 ==hexo d==时将生成的静态代码发布到该地址上面:
-```
+``` yml
 deploy:
   type: 'git'
   repo:  你的 githubpage 项目地址
@@ -60,7 +60,25 @@ deploy:
 git clone https://github.com/amehime/hexo-theme-shoka.git ./themes/shoka
 ```
 这里有两个选择 一种是直接clone,另外一种是使用 submodel 的方式,因为我需要修改源码，所以选择clone 下来然后删除.git文件夹。
-安装依赖 等可以参考该文档：[shoka doc]{https://shoka.lostyu.me/categories/computer-science/note/theme-shoka-doc/}
-[Ps:]{.red} 这里，我们自定义自己的主题配置文件时最好在根目录创建[_config.[主题名称]/.yml]{.kbd .red}
+安装依赖,主题配置:可以参考该文档：[shoka doc](https://shoka.lostyu.me/categories/computer-science/note/theme-shoka-doc/)
+[Ps:]{.red} 这里，我们自定义自己的主题配置文件时最好在根目录创建[_config.主题名称/.yml]{.kbd .red}
+[Ps1:]{.red} 搜索需要注册[Algolia](https://www.algolia.com/users/sign_in) 并且在运行[hexo g]{.kbd .red}之前运行[hexo algolia]{.kbd .red}。然后修改：
+``` yml
+algolia:
+  appId: "xxxx"
+  apiKey: "xxx"
+  adminApiKey: "xxx"
+  chunkSize: 5000
+  indexName: "xxxx"
+  fields:
+    - title #必须配置
+    - path #必须配置
+    - categories #推荐配置
+    - content:strip:truncate,0,4000
+    - gallery
+    - photos
+    - tags
+```
+
 
 # Github Acition 自动化部署

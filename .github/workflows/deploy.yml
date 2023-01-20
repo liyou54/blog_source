@@ -34,8 +34,6 @@ jobs:
         user_name: liyou54 # (or delete this input setting to use bot account)
         user_email: 864757331@qq.com  # (or delete this input setting to use bot account)
         commit_msg: ${{ github.event.head_commit.message }}  # (or delete this input setting to use hexo default settings)
-      run: |
-        hexo algolia
         
     - name: algolia
       id: algolia

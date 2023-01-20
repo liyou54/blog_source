@@ -40,7 +40,7 @@ hexo d
 
 ## hexo 配置文件
 
-hexo 的配置存放在 /_config.yml 以及 /themes/[主题名称]/_config.yml \(/_config.[主题名称]/.yml\)中，
+hexo 的配置存放在 [/_config.yml]{.red} 以及 [/themes/[主题名称]/_config.yml \(/_config.[主题名称]/.yml\)]{.red}中，
 这里主要修改deploy值，让我们在运行 ==hexo d==时将生成的静态代码发布到该地址上面:
 ```
 deploy:
@@ -50,6 +50,6 @@ deploy:
 ```
 
 # 主题安装
-因为本人是一个~~肥宅~~ [二次元]{.red}
+因为本人是一个~~肥宅~~ [二次元]{.red},因此选择了 [shoka](https://shoka.lostyu.me/) 这个主题
 
 # Github Acition 自动化部署

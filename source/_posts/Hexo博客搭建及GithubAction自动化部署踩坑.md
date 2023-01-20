@@ -90,5 +90,65 @@ valine:
   lang: en
   visitor: true # Article reading statistic
 ```
+[Ps4:]{.red} 随机图片api失效 ,音乐播放api失效
+
 
 # Github Acition 自动化部署
+原本在本地修改完成代码或者[markdown]{.red} 文件之后需要[hexo clean hexo g hexo d]{.red} 这样存在两个弊端:
+ 1-麻烦 
+ 2-markdown存在本地 容易丢失
+ 因此，可以使用[GitHub Acition]{.kbd .red}进行自动化部署，脚本如下:
+ ```yml
+ name: Deploy
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: A job to deploy blog.
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+      with:
+        submodules: true # Checkout private submodules(themes or something else).
+    
+    # Caching dependencies to speed up workflows. (GitHub will remove any cache entries that have not been accessed in over 7 days.)
+    - name: Cache node modules
+      uses: actions/cache@v1
+      id: cache
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+    - name: Install Dependencies
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: |
+        npm ci &
+        hexo clean &
+        hexo g &
+        hexo algolia
+
+        
+
+    # Deploy hexo blog website.
+    - name: Deploy
+      id: deploy
+      uses: sma11black/hexo-action@v1.0.3
+      with:
+        deploy_key: ${{ secrets.DEPLOY_KEY }}
+        user_name: xxx # (or delete this input setting to use bot account)
+        user_email: xxx@xx.com  # (or delete this input setting to use bot account)
+        commit_msg: ${{ github.event.head_commit.message }}  # (or delete this input setting to use hexo default settings)
+        
+
+        
+    # Use the output from the `deploy` step(use for test action)
+    - name: Get the output
+      run: |
+        echo "${{ steps.deploy.outputs.notify }}"
+ ```
+需要在设置里面添加secrets.DEPLOY_KEY 用于提交静态资源文件
+
+ [参考连接](https://github.com/marketplace/actions/hexo-action) 

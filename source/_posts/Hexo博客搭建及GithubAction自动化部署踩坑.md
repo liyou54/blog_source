@@ -8,11 +8,38 @@ tags:
 
 # 环境部署
 ##  安装git 
-##  安装nodejs 
-''' python
-    https://nodejs.org/zh-tw/download/ # node js 下载地址
-    
-'''
+##  安装nodejs及Hexo
+``` python
+https://nodejs.org/zh-tw/download/ # node js 下载地址
+
+
+
+# npm 切换淘宝源
+npm config set registry https://registry.npm.taobao.org
+
+# 安装 hexo
+npm install -g hexo-cli
+
+```
+## Hexo项目初始化
+``` python
+
+#创建项目文件夹，blog _source,这里blog_source 代表项目源文件，但是我们github需要创建两个仓库，一个仓库跟这个文件夹关联，并且自动化发布，另外一个项目用于储存的静态资源。
+mkdir blog _source
+
+# 初始化项目
+hexo init
+
+# 下载依赖
+npm i
+
+## hexo 清理、生成、预览、发布
+hexo clean
+hexo g
+hexo s
+hexo d
+
+```
 
 
 # 主题安装

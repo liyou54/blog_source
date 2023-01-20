@@ -34,9 +34,9 @@ jobs:
         user_name: liyou54 # (or delete this input setting to use bot account)
         user_email: 864757331@qq.com  # (or delete this input setting to use bot account)
         commit_msg: ${{ github.event.head_commit.message }}  # (or delete this input setting to use hexo default settings)
-    - name: Valine
       run: |
         hexo algolia
+        
 
     # Use the output from the `deploy` step(use for test action)
     - name: Get the output

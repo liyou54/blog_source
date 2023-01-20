@@ -59,6 +59,8 @@ const mediaPlayer = function(t, config) {
       return new Promise(function(resolve, reject) {
         source.forEach(function(raw) {
           var meta = utils.parse(raw)
+          // console.log(meta);
+
           if(meta[0]) {
             var skey = JSON.stringify(meta)
             var playlist = store.get(skey)

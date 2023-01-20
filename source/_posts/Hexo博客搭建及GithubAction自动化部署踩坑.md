@@ -43,7 +43,7 @@ hexo d
 
 ## hexo 配置文件
 
-hexo 的配置存放在 [/_config.yml]{.red} 以及 [/themes/[主题名称]/_config.yml \(/_config.[主题名称]/.yml\)]{.red}中，
+hexo 的配置存放在 [/_config.yml]{.kbd .red} 以及 [/themes/\[主题名称\]/_config.yml \(/_config.\[主题名称\]/.yml\)]{.kbd .red}中，
 这里主要修改deploy值，让我们在运行 ==hexo d==时将生成的静态代码发布到该地址上面:
 ```
 deploy:
@@ -53,13 +53,14 @@ deploy:
 ```
 
 # 主题安装
-因为本人是一个~~肥宅~~ [二次元]{.red},因此选择了 [shoka](https://shoka.lostyu.me/computer-science/note/theme-shoka-doc/) 这个主题,
+因为本人是一个~~肥宅~~ [二次元]{.kbd .red},因此选择了 [shoka](https://shoka.lostyu.me/computer-science/note/theme-shoka-doc/) 这个主题
 安装主题:
 ``` python
 # cd your-blog
 git clone https://github.com/amehime/hexo-theme-shoka.git ./themes/shoka
 ```
-这里有两个选择 一种是直接clone 另外一种是使用 submodel 的方式,因为我需要修改源码，所以选择clone 下来然后删除.git文件夹。
+这里有两个选择 一种是直接clone,另外一种是使用 submodel 的方式,因为我需要修改源码，所以选择clone 下来然后删除.git文件夹。
 安装依赖 等可以参考该文档：[shoka doc]{https://shoka.lostyu.me/categories/computer-science/note/theme-shoka-doc/}
+[Ps:]{.red} 这里，我们自定义自己的主题配置文件时最好在根目录创建[_config.[主题名称]/.yml]{.kbd .red}
 
 # Github Acition 自动化部署

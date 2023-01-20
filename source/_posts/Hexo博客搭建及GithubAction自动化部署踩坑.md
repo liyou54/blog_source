@@ -41,6 +41,10 @@ hexo d
 
 ```
 
+## hexo 配置文件
+
+hexo 的配置存放在 /_config.yml 以及 /themes/[主题名称]/_config.yml \(/[主题名称]/_config.yml\)中
+
 
 # 主题安装
 

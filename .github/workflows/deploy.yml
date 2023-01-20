@@ -24,7 +24,7 @@ jobs:
     - name: Install Dependencies
       if: steps.cache.outputs.cache-hit != 'true'
       run: |
-        npm ci
+        npm ci &
         hexo algolia
 
         

@@ -18,6 +18,9 @@ npm config set registry https://registry.npm.taobao.org
 # 安装 hexo
 npm install -g hexo-cli
 
+#安装 hexo git 插件
+npm install hexo-deployer-git --save
+
 ```
 ## Hexo项目初始化
 ``` python
@@ -50,6 +53,13 @@ deploy:
 ```
 
 # 主题安装
-因为本人是一个~~肥宅~~ [二次元]{.red},因此选择了 [shoka](https://shoka.lostyu.me/) 这个主题
+因为本人是一个~~肥宅~~ [二次元]{.red},因此选择了 [shoka](https://shoka.lostyu.me/computer-science/note/theme-shoka-doc/) 这个主题,
+安装主题:
+``` python
+# cd your-blog
+git clone https://github.com/amehime/hexo-theme-shoka.git ./themes/shoka
+```
+这里有两个选择 一种是直接clone 另外一种是使用 submodel 的方式,因为我需要修改源码，所以选择clone 下来然后删除.git文件夹。
+安装依赖 等可以参考该文档：[shoka doc]{https://shoka.lostyu.me/categories/computer-science/note/theme-shoka-doc/}
 
 # Github Acition 自动化部署

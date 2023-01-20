@@ -25,11 +25,11 @@ jobs:
       if: steps.cache.outputs.cache-hit != 'true'
       run: npm ci
 
-        - name: algolia
+    - name: algolia
       id: algolia
       run: |
         hexo algolia
-        
+
     # Deploy hexo blog website.
     - name: Deploy
       id: deploy

@@ -43,7 +43,7 @@ hexo d
 
 ## hexo 配置文件
 
-hexo 的配置存放在 [/_config.yml]{.kbd .red} 以及 [/themes/\[主题名称\]/_config.yml \(/_config.\[主题名称\]/.yml\)]{.kbd .red}中，
+hexo 的配置存放在 [/_config.yml]{.kbd .red} 以及 [/themes/主题名称/_config.yml]{.kbd .red} [\(/_config.主题名称/.yml\)]{.kbd .red}中，
 这里主要修改deploy值，让我们在运行 ==hexo d==时将生成的静态代码发布到该地址上面:
 ```
 deploy:

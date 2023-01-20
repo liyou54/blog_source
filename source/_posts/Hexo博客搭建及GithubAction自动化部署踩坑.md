@@ -79,6 +79,16 @@ algolia:
     - photos
     - tags
 ```
-
+[Ps3:]{.red} 评论需要注册[Learncode]( https://leancloud.cn/)并且修改配置文件
+```yml
+valine:
+  appId: xxxx
+  appKey: xxxx
+  placeholder: ヽ(○´∀`)ﾉ♪ # Comment box placeholder
+  avatar: mp # Gravatar style : mp, identicon, monsterid, wavatar, robohash, retro
+  pageSize: 10 # Pagination size
+  lang: en
+  visitor: true # Article reading statistic
+```
 
 # Github Acition 自动化部署

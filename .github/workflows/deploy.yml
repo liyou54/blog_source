@@ -24,7 +24,12 @@ jobs:
     - name: Install Dependencies
       if: steps.cache.outputs.cache-hit != 'true'
       run: npm ci
-    
+
+        - name: algolia
+      id: algolia
+      run: |
+        hexo algolia
+        
     # Deploy hexo blog website.
     - name: Deploy
       id: deploy
@@ -35,10 +40,7 @@ jobs:
         user_email: 864757331@qq.com  # (or delete this input setting to use bot account)
         commit_msg: ${{ github.event.head_commit.message }}  # (or delete this input setting to use hexo default settings)
         
-    - name: algolia
-      id: algolia
-      run: |
-        hexo algolia
+
         
     # Use the output from the `deploy` step(use for test action)
     - name: Get the output

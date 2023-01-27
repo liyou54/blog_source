@@ -1,7 +1,7 @@
 var NOWPLAYING = null
 const isMobile = /mobile/i.test(window.navigator.userAgent);
 const mediaPlayer = function(t, config) {
-  var option = {
+  var option = {·
     type: 'audio',
     mode: 'random',
     btns: ['play-pause', 'music'],
